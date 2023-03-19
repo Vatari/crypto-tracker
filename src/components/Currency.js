@@ -1,4 +1,4 @@
-const User = ({ prices, mainPrices, img }, props) => {
+const Currency = ({ prices, mainPrices, img }, props) => {
   // console.log(mainPrices.c);
   const price = Object.values(prices).map((p) => p.c);
   const pairName = Object.values(prices).map((p) => p.s);
@@ -117,4 +117,4 @@ const User = ({ prices, mainPrices, img }, props) => {
   );
 };
 
-export default User;
+export default Currency;

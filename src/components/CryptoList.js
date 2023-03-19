@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import DeleteModal from "./DeleteModal";
-import User from "./User";
+import Currency from "./Currency";
 import UserCreate from "./UserCreate";
 import UserDetails from "./UserDetails";
 
-import * as userService from "../services/userService";
-
-const UserList = () => {
+const CryptoList = () => {
   const [prices, setPrices] = useState([]);
   const [percent, setPercent] = useState([]);
   const [mainPrices, setMainPrices] = useState([]);
@@ -153,10 +151,10 @@ const UserList = () => {
     onClose();
   };
 
-  const onEditClick = async (userId) => {
+  /*   const onEditClick = async (userId) => {
     const user = await userService.getOne(userId);
     setShowEditUser(user);
-  };
+  }; */
   return (
     <>
       {selectedUser &&
@@ -355,12 +353,12 @@ const UserList = () => {
                   onEditClick={onEditClick}
                 />
               ))} */}
-            <User
+            <Currency
               prices={prices.filter((p) => p.s === "ETHUSDT")}
               mainPrices={mainPrices}
               img={require("../assets/images/eth-logo.png")}
             />
-            <User
+            <Currency
               prices={prices.filter((p) => p.s === "BTCUSDT")}
               mainPrices={mainPrices}
               img={require("../assets/images/btc_logo.png")}
@@ -375,4 +373,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default CryptoList;
